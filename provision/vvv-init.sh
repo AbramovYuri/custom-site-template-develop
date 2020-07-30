@@ -5,7 +5,7 @@ set -eo pipefail
 DOMAIN=$(get_primary_host "${VVV_SITE_NAME}".test)
 SITE_TITLE=$(get_config_value 'site_title' "${DOMAIN}")
 WP_TYPE=$(get_config_value 'wp_type' "single")
-DB_NAME=$(get_config_value 'db_name' "${VVV_SITE_NAME}")
+DB_NAME="db-test"
 DB_NAME=${DB_NAME//[\\\/\.\<\>\:\"\'\|\?\!\*-]/}
 VCS=$(get_config_value 'vcs' '')
 if [[ -z "${VCS}" ]]; then
